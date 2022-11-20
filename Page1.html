@@ -6,24 +6,34 @@
                 <!--<div class="fie">-->
                     <h1 class="lgd">登入帳號</h1>
                     <p>直接輸入您的 **** 會員帳號密碼登入</p>
-    <!--1-->        <input type="username" id="username" class="username_email" name="username" placeholder="您的電子郵件地址" required>
-    <!--2-->        <input type="password" id="password" class="password1" name="password" placeholder="您的密碼" required>
+    <!--1-->        <input type="username" id="username" class="username_email" name="username" placeholder="電子郵件地址或手機號碼" required>
+    <!--2-->        <input type="password" id="password" class="password1" name="password" placeholder="密碼" required>
     <!--3-->        <input type="button" value="登入" class="btn" id="submit" onclick="myFormCheck()"/>
-    <!--4-->        <div id="rmbr">
-    <!--4.1-->          <input type="checkbox" id="remberme" name="remberme" required>
-    <!--4.2-->          <label for="remberme" id="remberme0">記住我</label>
-                    </div>
+                    <div id="forgetPassword">
+                      <a href="javascript:;" id="member_btn">忘記密碼?</a>
+    <!--
                     <div id="sign">
-                        <a href="javascript:;" id="member_btn">忘記密碼?</a>
-                        <a href="javascript:;" id="register">註冊</a>
+                    <div id="rmbr">
+                        <input type="checkbox" id="remberme" name="remberme" required>
+                        <label for="remberme" id="remberme0">記住我</label>
+                    </div>
+    -->
+                    <div id="sign">
+                        <a href="javascript:;" id="register">建立新帳號</a>
                     </div>
                     <p class="member_btn">您可以使用以下帳號密碼直接登入為 會員</p>
                     <div class="img_btn">
-                        <div class="c_btn facebook-btn fb">
-                            <a href="javascript:;" ><img src="img/facebook.png" alt=""></a>
+                        <div class="c_btn facebook-btn fb" href="javascript:;">
+                          <div class="Icon">
+                            <a><img src="img/facebook.png" alt=""></a>
+                            <div class ="faceIconText">facebook</div>
+                          </div>
                         </div>
-                        <div class="c_btn google-btn go">
-                            <a href="javascript:;" ><img src="img/google.png" alt=""></a>
+                        <div class="c_btn google-btn go" href="javascript:;">
+                          <div class="Icon">
+                            <a><img src="img/google.png" alt=""></a>
+                            <p>google</p>
+                          </div>
                         </div>
                     </div>
                 <!--</div>-->
