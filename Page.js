@@ -13,6 +13,8 @@ function myFormCheck(){// 以下功能單擊登錄按鈕執行。
     else{
         attempt --;// 減少一個。
         alert("You have left "+attempt+" attempt;");
+    }
+}
 // 3次嘗試後禁用字段。
 /*
         if( attempt === 0){
@@ -22,8 +24,8 @@ function myFormCheck(){// 以下功能單擊登錄按鈕執行。
             return false;
         }
         */
-    }
-}
+
+
 //第種寫法// 記住我 passport remember-me  (NodeJS Express Passport Remember me)
 // app.use( function (req, res, next) {
 //     if ( req.method === 'POST' && req.url === '/login' ) {
