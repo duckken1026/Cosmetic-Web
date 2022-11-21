@@ -5,7 +5,7 @@ var attempt = 3; // 可變數來計算嘗試次數。
 function myFormCheck(){// 以下功能單擊登錄按鈕執行。
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    if ( username === "0 && password === "00"){
+    if ( username === "0" && password === "00"){
         alert ("Login successfully");
         window.location = "javascript:;"; // 重定向到其他頁面。
         return false;
