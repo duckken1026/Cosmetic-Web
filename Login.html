@@ -1,6 +1,8 @@
 <!--login會員登入-->
     <form class="login" action="javascript:;" method="post">
-        <div id="left" class="one-thirds"></div><!--one-thirds-->
+        <div id="left" class="one-thirds">
+
+        </div><!--one-thirds-->
         <div id="right" class="two-thirds">
             <fieldset>
                 <!--<div class="fie">-->
@@ -9,19 +11,15 @@
     <!--1-->        <input type="username" id="username" class="username_email" name="username" placeholder="電子郵件地址或手機號碼" required>
     <!--2-->        <input type="password" id="password" class="password1" name="password" placeholder="密碼" required>
     <!--3-->        <input type="button" value="登入" class="btn" id="submit" onclick="myFormCheck()"/>
-                    <div id="forgetPassword">
-                      <a href="javascript:;" id="member_btn">忘記密碼?</a>
-    <!--
-                    <div id="sign">
-                    <div id="rmbr">
-                        <input type="checkbox" id="remberme" name="remberme" required>
-                        <label for="remberme" id="remberme0">記住我</label>
+                    <div id="anotherWay">
+                      <div class="forgetPassword">
+                        <a href="javascript:;" id="member_btn">忘記密碼?</a>
+                      </div>
+                      <div id="sign">
+                        <a href="javascript:;" id="register">註冊</a>
+                      </div>
                     </div>
-    -->
-                    <div id="sign">
-                        <a href="javascript:;" id="register">建立新帳號</a>
-                    </div>
-                    <p class="member_btn">您可以使用以下帳號密碼直接登入為會員</p>
+                    <p class="member_btn">您可以使用以下帳號密碼直接登入為 會員</p>
                     <div class="img_btn">
                         <div class="c_btn facebook-btn fb" href="javascript:;">
                           <div class="IconF">
@@ -45,6 +43,6 @@
         </div><!--two-thirds-->
     </form>
 <style media="screen">
-  @import url(Page1.css);
+  @import url(Login.css);
 </style>
-<script type="text/javascript" source src="Page.js"></script>
+<script type="text/javascript" source src="Login.js"></script>

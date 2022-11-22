@@ -6,9 +6,10 @@ function myFormCheck(){// 以下功能單擊登錄按鈕執行。
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     if ( username === "0" && password === "00"){
-        alert ("Login successfully");
+        //alert ("Login successfully");
         window.location = "javascript:;"; // 重定向到其他頁面。
-        return false;
+        document.location.href = "https://www.google.com/search?q=%E6%8E%83%E6%8F%8F%E5%99%A8%E5%8F%AF%E4%BB%A5%E5%81%9A%E5%A4%9A%E5%B0%8F&oq=&aqs=chrome.6.35i39i362l8.3153146j0j7&sourceid=chrome&ie=UTF-8";
+        //return false;
     }
     else{
         attempt --;// 減少一個。

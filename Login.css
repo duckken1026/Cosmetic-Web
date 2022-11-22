@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +13,7 @@ body{
     width: 100%;
     height: 100vh;
     background-color: palevioletred;
-    color: #555;
+    color: #555555;
     font-size: 10px;
 }
 
@@ -26,14 +28,12 @@ form.login{
 }
 
 .one-thirds{
-    width: 50%;
-    border-right:3px solid #D2D2D2;
-    border-radius: 10%;
+    width: 55%;
     display: flex;
 }
 
 .two-thirds{
-    width: 50%;
+    width: 40%;
     background-color: #fff;
     flex: 0 1 auto;
     border-radius: 10%;
@@ -112,9 +112,9 @@ input[type="button"]{
 }
 
 .img_btn{
-    width: 100%;
-    display: inline-flex;/*合併在一起*/
-    flex-wrap: wrap;/*合併在一起*/
+    width: 70%;
+    display: inline-block;/*合併在一起*/
+    flex-wrap: nowrap;/*合併在一起*/
 }
 
 
@@ -132,20 +132,31 @@ input[type="button"]{
 .faceIconText{
   color: #555;
   font-size: 10px;
+  float: right;
 }
 
 .IconF{
   border: 1px solid #ddd;
   border-radius: 1px;
   padding: 2px;
-  width: 1%;
+  width: 50%;
+  float: left;
+}
+
+.IconF a img{
+  width:80%
+}
+
+.IconG a img{
+  width:160%
 }
 
 .IconG{
   border: 1px solid #ddd;
   border-radius: 1px;
   padding: 2px;
-  width: 150px;
+  width: 50%;
+  float: right;
 }
 
 .IconF:hover{
