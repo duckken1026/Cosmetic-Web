@@ -30,7 +30,16 @@ form.login{
 .one-thirds{
     width: 55%;
     display: flex;
+    background:linear-gradient(#ffe6e6, #ffccff, #ffe6e6);
+    border-radius: 10%;
+    border:1px solid #ffffff;
 }
+
+.companyIcon{
+    margin-top: 50%;
+    margin-left: 50%;
+}
+
 
 .two-thirds{
     width: 40%;
