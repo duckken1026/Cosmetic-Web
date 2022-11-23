@@ -30,14 +30,14 @@ form.login{
 .one-thirds{
     width: 55%;
     display: flex;
-    background:linear-gradient(#ffe6e6, #ffccff, #ffe6e6);
+    background:linear-gradient(#ffbbbb, #ffffff, #ffbbbb);
     border-radius: 10%;
     border:1px solid #ffffff;
 }
 
 .companyIcon{
-    margin-top: 50%;
-    margin-left: 50%;
+    margin-top: 15%;
+    margin-left: 9%;
 }
 
 
