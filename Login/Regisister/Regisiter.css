@@ -1,0 +1,9 @@
+#out_block {
+    height: 30000px;
+}
+
+#fixed_block {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}

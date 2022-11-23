@@ -1,4 +1,20 @@
+#out_block {
+    height: 100px;
+}
 
+#fixed_block {
+    position: sticky;
+    top: 0px;
+    background-color: #EEEEEE;
+    height:60px;
+    border: 3px solid #FFFFFF;
+}
+
+.headerType{
+  font-size: 30px;
+  color: black;
+  float:left;
+}
 
 * {
     margin: 0;
