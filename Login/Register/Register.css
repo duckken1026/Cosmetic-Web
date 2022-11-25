@@ -5,5 +5,10 @@
 #fixed_block {
     position: sticky;
     top: 0px;
-    background-color: white;
+    background-color: pink;
+    height: 100px;
+}
+
+.headerType {
+    margin-left: 350px;
 }
