@@ -1,0 +1,15 @@
+#out_block {
+    height: 30000px;
+}
+
+#fixed_block {
+    position: sticky;
+    top: 0px;
+    background-color: rgb(241, 198, 212);
+    height: 50px;
+}
+
+.headerType {
+    margin-left: 1%;
+}
+
