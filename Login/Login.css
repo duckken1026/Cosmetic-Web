@@ -222,7 +222,7 @@ input[type="button"]{
 
 .navbar {
     display: block;
-    width: 100%;
+    width: 110%;
     height: 60px;
     background:  rgb(236, 211, 219);
     box-shadow: 0px 5px 20px rgba(0, 0, 0, .4);
