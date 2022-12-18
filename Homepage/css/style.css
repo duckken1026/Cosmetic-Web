@@ -172,3 +172,7 @@ h3.ico4 { background-image:url(images/ico4.gif);}
 .nav-toggler {
     display: none;
 }
+
+.Headee {
+	display: inline-block;
+}

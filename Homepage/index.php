@@ -20,7 +20,7 @@
       <a href="./popular.html"><b>流行</b></a>
       <a href="./anime.html"><b>推薦</b></a>
       <a href="./about.html"><b>儲值</b></a>
-      <a href="../Login/Login.html"><b>登入</b></a>
+      <div id = "Login"><a href="../Login/Login.html"><b>登入</b></a></div>
     </div>
   </nav>
   <div class="shell">
