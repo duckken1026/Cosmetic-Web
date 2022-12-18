@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2022-12-08 10:04:37
+-- 產生時間： 2022-12-18 05:35:29
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 8.1.6
 
@@ -150,7 +150,6 @@ CREATE TABLE `list` (
 INSERT INTO `list` (`order_id`, `product_id`, `quantity`) VALUES
 ('00000001', '000001', 1),
 ('00000002', '000002', 1),
-('00000002', '000003', 1),
 ('00000003', '000001', 1);
 
 -- --------------------------------------------------------
@@ -194,7 +193,7 @@ CREATE TABLE `product` (
   `Name` varchar(50) NOT NULL,
   `Price` int(11) NOT NULL,
   `Stock` int(11) DEFAULT NULL,
-  `image_src` varchar(200) DEFAULT NULL,
+  `image_src` text DEFAULT NULL,
   `detail` text DEFAULT NULL,
   `review` text DEFAULT NULL,
   `Seller_member_id` varchar(10) NOT NULL,
@@ -208,7 +207,10 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`ID`, `Name`, `Price`, `Stock`, `image_src`, `detail`, `review`, `Seller_member_id`, `Shop_id`) VALUES
 ('000001', 'may 櫻花漸層唇膏', 300, 9, 'https://cf.shopee.tw/file/18e8cea4f6d0062c49bde9a9255f4979', '🌸變色:可根據嘴唇的溫度和濕度調整唇顏色的深度。\n🌸天然安全:以精油、蜂蠟、種子油製成,可讓您的嘴唇保持水分。\n🌸效果:防水、持久保濕、防嘴唇乾裂、健康安全。\n🌸保濕唇膏 + 護唇膏:不僅呵護嘴唇,而且您也可以享受嘴唇豐富的色素。\n🌸包裝內含:3 種顏色果凍唇膏', '', '2', '001'),
 ('000002', '十色眼影盤 大地色 人魚色 南瓜西柚色 啞光珠光', 29, 5, 'https://th.bing.com/th/id/OIP.6eL4v-VA5Zz4kzBOhObfaQHaHa?pid=ImgDet&rs=1', '一盒多用\n臥蠶/眼影/一盒搞定方便攜帶\n粉質細膩\n輕滑透薄，上色均勻，不卡粉\n一盤十色', '', '5', '002'),
-('000003', '♬韓彩美妝♬萊蔻BB霜50g 補水保濕裸妝隔離遮瑕粉底液 飾底乳 彩妝化妝品', 78, 5, 'https://cf.shopee.tw/file/242ff9850e5978750899222b017f4206', '', '', '5', '002');
+('000003', '零毛孔美肌柔焦棒', 490, 6, 'https://static.popdaily.com.tw/u/202107/d764971f-09ce-4918-a563-068a6aed1d48.jpeg', '10秒快速提亮潤色，特殊彈性球狀粉體，填補瑕疵平整肌膚。\n毛孔隱形，修飾膚色不均與暗沉，展現粉嫩透白光澤肌。\n添加玻尿酸與Ceramide保濕潤澤、虎耳草萃取物緊緻毛孔、高分子有機矽彈性粉體抑制油光。\n無Paraben防腐劑、無酒精、無香料。', '', '5', '002'),
+('000004', '花漾腮紅(小花腮紅) Cheek Pop 小花腮紅', 920, 6, 'https://tshop.r10s.com/be7/58b/ceac/dcfc/f041/9c14/aca5/112ce99dd80242ac110002.jpg', '最新專利「慢火精緻烘焙技術(new patented slow-bake process)」，讓腮紅由液狀轉為粉狀，顏色更為持久，同時提供最純淨自然的紅潤色調，絕對顯色不脫妝。這款腮紅以腮紅刷輕刷可以呈現粉霧的繽紛感，用指腹疊擦則有絲滑乳霜的豐盈質地。它能輕鬆呈現持久的頰色，全天呈現光采無瑕的美麗肌膚，呈現繽紛時髦的紅潤臉頰，是春天時尚妝扮的完美搭配。', '', '2', '001'),
+('000005', 'KISSME開架超！持久極細抗暈眼線液筆', 439, 6, 'https://api.watsons.com.tw/medias/prd-side-225225.jpg?context=bWFzdGVyfGltYWdlc3wxMDMyNDZ8aW1hZ2UvanBlZ3xoMjcvaGYwLzkzMDI2MDE4MjYzMzQvV1RDVFctMjI1MjI1LXNpZGUuanBnfGY4ZDQxM2NkYTIxNWE4YjIzNWZkNDE3YWIxN2UyMWQwZWNmYTE4Zjk0NDllMjg4MWRiMjQ2MzMxZGI5ZTMyNTU', '從眼頭到眼尾描繪精緻極細線條，新手和手殘黨也可以快速上手，\n速乾成分，一筆完妝不沾眼皮，迅速打造完美深邃眼神，\n新持久成分和新高密着成分，持久顯色不暈染，\n全日保持完美妝容，直到夜晚也持久不脫妝\n從早到晚，綻放完美深邃眼神', '', '2', '001'),
+('000006', 'KISSME專屬型色眉彩膏R', 320, 9, 'https://api.watsons.com.tw/medias/prd-side-228462.jpg?context=bWFzdGVyfGltYWdlc3wxMDUzOTR8aW1hZ2UvanBlZ3xoY2YvaDY3Lzk0MDA4MjIzOTkwMDYvV1RDVFctMjI4NDYyLXNpZGUuanBnfDQ3YzI1M2RiYzEwNTBlZWYyYzBjNWFjYTM3MTg4MjIwZGZiMTdhMmUwNzljZjRjYjA4OGZlYTQ1ZDliYTMxNGE', '高顯色度，搭配髮色，明亮修飾眉毛光澤\n長時間不掉色，耐汗、抗磨擦\n精巧型螺旋刷頭，輕輕刷拭即能完整著色，並且能避免染眉膏直接接觸到肌膚的困擾添加維他命B5(保護眉毛成分)，使眉毛具有光澤且強韌有彈性。', '', '5', '002');
 
 -- --------------------------------------------------------
 
