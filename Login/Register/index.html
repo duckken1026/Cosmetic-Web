@@ -53,6 +53,12 @@ var vue = new Vue({
         },
         submit() {
             console.log('register', this.registerForm)
+            console.log(this.registerForm.email)
+            console.log(this.registerForm.FirstName)
+            console.log(this.registerForm.EndName)
+            console.log(this.registerForm.Password)
+            console.log(this.registerForm.repeat)
+            alert('註冊成功!')
         }
     },
     beforeMount () {}
