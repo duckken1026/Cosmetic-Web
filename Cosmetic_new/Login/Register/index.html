@@ -51,7 +51,11 @@ var vue = new Vue({
             this.active = type
         },
         submit() {
-            console.log('register', this.registerForm)
+          console.log('register', this.registerForm)
+          if(this.registerForm.Password == this.registerForm.repeat){
+            alert("success")
+            window.location = "../Login.html"
+          }
         }
     },
     beforeMount () {}
