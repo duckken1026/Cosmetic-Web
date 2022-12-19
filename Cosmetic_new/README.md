@@ -1,3 +1,0 @@
-# Cosmetic-Web
-
-login page
