@@ -70,7 +70,7 @@
         <?php
         // include('../partial/head.php');
         // include('../partial/navbar.php');
-        // include('../config/connect.php');
+        include('../config/connect.php');
         $sql = "SELECT * FROM product";
         $count = 0;
         $line = false;
