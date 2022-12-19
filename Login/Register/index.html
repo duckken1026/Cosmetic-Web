@@ -52,6 +52,11 @@ var vue = new Vue({
         },
         submit() {
             console.log('register', this.registerForm)
+            if(this.registerForm.Password == 'a'){
+                console.log("hello")
+                window.location = "../Login.html"
+            }
+            console.log(this.registerForm.Password)
         }
     },
     beforeMount () {}
