@@ -7,9 +7,9 @@ function myFormCheck(){// 以下功能單擊登錄按鈕執行。
     var password = document.getElementById("password").value;
     if ( username === "0" && password === "00"){
         //alert ("Login successfully");
-        window.location = "javascript:;"; // 重定向到其他頁面。
+        window.location = "../Homepage/index.html"; // 重定向到其他頁面。
         return false;
-        
+
     }
     else{
         attempt --;// 減少一個。
