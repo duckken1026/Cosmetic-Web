@@ -28,8 +28,7 @@
                 <div class='form' id="fromLogin">
                         <span style="font-size: 30px;">註冊帳號</span>
                         <div class="input"><input :class='{ hasValue: registerForm.email }' v-model='registerForm.email' type="text" name="email" id='email' /><label for="email">電子信箱</label></div>
-                        <div class="input"><input :class='{ hasValue: registerForm.FirstName }' v-model='registerForm.FirstName' type="text" name="FirstName" id="FirstName" /><label for="FirstName">姓</label></div>
-                        <div class="input"><input :class='{ hasValue: registerForm.EndName }' v-model='registerForm.EndName' type="text" name="EndName" id="EndName" /><label for="EndName">名字</label></div>
+                        <div class="input"><input :class='{ hasValue: registerForm.Username }' v-model='registerForm.Username' type="text" name="Username" id="username" /><label for="username">用戶名</label></div>
                         <div class="input"><input :class='{ hasValue: registerForm.Password }' v-model='registerForm.Password' type="password" name="Password" id="Password" /><label for="Password">密碼</label></div>
                         <div class="input"><input :class='{ hasValue: registerForm.repeat }' v-model='registerForm.repeat' type="password" name="repeat" id="Passwordrepeat" /><label for="Passwordrepeat">重複密碼</label></div>
                     <button type="submit" @click='submit'>註冊</button>
@@ -44,7 +43,7 @@ var vue = new Vue({
     el: '#app',
     data: {
         active: 'register',
-        registerForm: { email: '', FirstName: '', EndName: '', Password: '', repeat: '', },
+        registerForm: { email: '', Username: '', Password: '', repeat: '', },
         loginForm: { Username: '', Password: '', },
     },
     methods: {
@@ -53,12 +52,6 @@ var vue = new Vue({
         },
         submit() {
             console.log('register', this.registerForm)
-            console.log(this.registerForm.email)
-            console.log(this.registerForm.FirstName)
-            console.log(this.registerForm.EndName)
-            console.log(this.registerForm.Password)
-            console.log(this.registerForm.repeat)
-            alert('註冊成功!')
         }
     },
     beforeMount () {}

@@ -67,53 +67,56 @@
         </div>
         <!-- End Content Slider -->
         <!-- Products -->
-        <?php
-        // include('../partial/head.php');
-        // include('../partial/navbar.php');
-        // include('../config/connect.php');
-        $sql = "SELECT * FROM product";
-        $count = 0;
-        $line = false;
-        $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
-        if ($res == True) {
+        <div class="products">
+          <div class="cl">&nbsp;</div>
+          <ul>
+            <?php
+            // include('../partial/head.php');
+            // include('../partial/navbar.php');
+            include('../config/connect.php');
+            $sql = "SELECT * FROM product";
+            $count = 0;
+            $line = false;
+            $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
+            if ($res == True) {
 
-          while ($rows = mysqli_fetch_assoc($res)) {
-            $id = $rows['ID'];
-            $name = $rows['Name'];
-            $price = $rows['Price'];
-            $stock = $rows['Stock'];
-            $image_src = $rows['image_src'];
-            $count += 1;
-            if ($count % 3 == 0) {
-              $line = true;
-            }
-            // else if ($count == 3)
-            //     continue;
-            else {
-              $line = false;
-            }
+              while ($rows = mysqli_fetch_assoc($res)) {
+                $id = $rows['ID'];
+                $name = $rows['Name'];
+                $price = $rows['Price'];
+                $stock = $rows['Stock'];
+                $image_src = $rows['image_src'];
+                $count += 1;
+                if ($count % 2 == 0) {
+                  $line = true;
+                }
+                // else if ($count == 3)
+                //     continue;
+                else {
+                  $line = false;
+                }
 
-        ?>
-            <div class="products">
-              <div class="cl">&nbsp;</div>
-              <ul>
-                <li>
-                  <a href="#">
-                    <img src=<?php echo $image_src;
-                            }
-                          } ?> alt="" width="400px" height="300px">
-                  </a>
-                  <div class="product-info">
-                    <h3>LOREM IPSUM</h3>
-                    <div class="product-desc">
-                      <h4>WOMEN’S</h4>
-                      <p>Lorem ipsum dolor sit<br />
-                        amet</p>
-                      <strong class="price">$58.99</strong>
-                    </div>
+            ?>
+                <?php if ($line)
+                  echo "<li class='last'>";
+                else
+                  echo "<li>";
+                ?>
+                <a href="#">
+                  <img src=<?php echo $image_src ?> alt="" width="231px" height="383px" />
+                </a>
+                <div class="product-info">
+                  <h3>LOREM IPSUM</h3>
+                  <div class="product-desc">
+                    <h4>WOMEN’S</h4>
+                    <p>Lorem ipsum dolor sit<br />
+                      amet</p>
+                    <strong class="price">$58.99</strong>
                   </div>
+                </div>
                 </li>
-                <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
+                <!-- <?php if ($line == True) echo "<br>"; ?> -->
+                <!-- <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
                   <div class="product-info">
                     <h3>LOREM IPSUM</h3>
                     <div class="product-desc">
@@ -134,11 +137,15 @@
                       <strong class="price">$58.99</strong>
                     </div>
                   </div>
-                </li>
-              </ul>
-              <div class="cl">&nbsp;</div>
-            </div>
-            <!-- End Products -->
+                </li> -->
+            <?php
+              }
+            }
+            ?>
+          </ul>
+          <div class="cl">&nbsp;</div>
+        </div>
+        <!-- End Products -->
       </div>
       <!-- End Content -->
       <!-- Sidebar -->
