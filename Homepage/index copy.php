@@ -9,7 +9,6 @@
   <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
   <script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
   <script src="js/jquery-func.js" type="text/javascript"></script>
-  <script src="js/functionLibrary.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -29,8 +28,8 @@
     <!-- Header -->
     <br> <br> <br> <br>
     <div>
-      <!-- <div id="header"> -->
-      <!-- <h1 id="logo"><a href="#">shoparound</a></h1> -->
+      <!-- <div id="header">
+      <h1 id="logo"><a href="#">shoparound</a></h1> -->
       <!-- Cart -->
       <!-- <div id="cart"> <a href="#" class="cart-link">Your Shopping Cart</a> -->
       <div class="cl">&nbsp;</div>
@@ -70,53 +69,58 @@
         </div>
         <!-- End Content Slider -->
         <!-- Products -->
-        <?php
-        // include('../partial/head.php');
-        // include('../partial/navbar.php');
-        include('../config/connect.php');
-        $sql = "SELECT * FROM product";
-        $count = 0;
-        $line = false;
-        $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
-        if ($res == True) {
+        <div class="products">
+          <div class="cl">&nbsp;</div>
+          <ul>
+            <?php
+            // include('../partial/head.php');
+            // include('../partial/navbar.php');
+            include('../config/connect.php');
+            $sql = "SELECT * FROM product";
+            $count = 0;
+            $line = false;
+            $stop = false;
+            $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
+            if ($res == True) {
 
-          while ($rows = mysqli_fetch_assoc($res)) {
-            $id = $rows['ID'];
-            $name = $rows['Name'];
-            $price = $rows['Price'];
-            $stock = $rows['Stock'];
-            $image_src = $rows['image_src'];
-            $count += 1;
-            if ($count % 3 == 0) {
-              $line = true;
-            }
-            // else if ($count == 3)
-            //     continue;
-            else {
-              $line = false;
-            }
+              while ($rows = mysqli_fetch_assoc($res)) {
+                $id = $rows['ID'];
+                $name = $rows['Name'];
+                $price = $rows['Price'];
+                $stock = $rows['Stock'];
+                $image_src = $rows['image_src'];
+                $count += 1;
+                if ($count % 2 == 0) {
+                  $line = true;
+                } else {
+                  $line = false;
+                }
 
-        ?>
-            <div class="products">
-              <div class="cl">&nbsp;</div>
-              <ul>
-                <li>
-                  <a href="#">
-                    <img src=<?php echo $image_src;
-                            }
-                          } ?> alt="" width="400px" height="300px">
-                  </a>
-                  <div class="product-info">
-                    <h3>LOREM IPSUM</h3>
-                    <div class="product-desc">
-                      <h4>WOMEN’S</h4>
-                      <p>Lorem ipsum dolor sit<br />
-                        amet</p>
-                      <strong class="price">$58.99</strong>
-                    </div>
+                if ($count >= 7) {
+                  $stop = true;
+                  break;
+                }
+            ?>
+                <?php if ($line)
+                  echo "<li class='last'>";
+                else
+                  echo "<li>";
+                ?>
+                <a href="#">
+                  <img src=<?php echo $image_src ?> alt="" width="231px" height="383px" />
+                </a>
+                <div class="product-info">
+                  <h3><? echo $name ?></h3>
+                  <div class="product-desc">
+                    <h4>WOMEN’S</h4>
+                    <p>Lorem ipsum dolor sit<br />
+                      amet</p>
+                    <strong class="price"><?php echo $price ?></strong>
                   </div>
+                </div>
                 </li>
-                <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
+                <!-- <?php if ($line == True) echo "<br>"; ?> -->
+                <!-- <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
                   <div class="product-info">
                     <h3>LOREM IPSUM</h3>
                     <div class="product-desc">
@@ -137,11 +141,15 @@
                       <strong class="price">$58.99</strong>
                     </div>
                   </div>
-                </li>
-              </ul>
-              <div class="cl">&nbsp;</div>
-            </div>
-            <!-- End Products -->
+                </li> -->
+              <?php
+              }
+
+              ?>
+          </ul>
+          <div class="cl">&nbsp;</div>
+        </div>
+        <!-- End Products -->
       </div>
       <!-- End Content -->
       <!-- Sidebar -->
@@ -205,10 +213,34 @@
     <!-- Side Full -->
     <div class="side-full">
       <!-- More Products -->
+
       <div class="more-products">
         <div class="more-products-holder">
           <ul>
-            <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
+            <?php
+              $sql = "SELECT * FROM product";
+              $count = 0;
+              $last = false;
+              $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
+              while ($rows = mysqli_fetch_assoc($res)) {
+                $id = $rows['ID'];
+                $name = $rows['Name'];
+                $price = $rows['Price'];
+                $stock = $rows['Stock'];
+                $image_src = $rows['image_src'];
+                $count += 1;
+
+                if ($count >= 7) {
+                  $out = true;
+                } else if ($count == 17) {
+                  $last = true;
+                } else {
+                  $out = false;
+                  continue;
+                }
+            ?>
+              <li><a href="#"><img src=<?php if ($out) echo $image_src ?> alt="" width="100px" height="100px" /></a></li>
+              <!-- <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
             <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
             <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
             <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
@@ -228,7 +260,11 @@
             <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
             <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
             <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-            <li class="last"><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
+            <li class="last"><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li> -->
+          <?php
+                if ($last) echo "<li class='last'><a href='#'><img src='css/images/small7.jpg' alt='' /></a></li>";
+              }
+            } ?>
           </ul>
         </div>
         <div class="more-nav"> <a href="#" class="prev">previous</a> <a href="#" class="next">next</a> </div>
