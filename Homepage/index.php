@@ -12,7 +12,7 @@
 <script src="js/functionLibrary.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body style>
 <!-- Shell -->
 <nav class="navbar">
   <a href="../Homepage/index.html"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
@@ -85,7 +85,7 @@
                 $stock = $rows['Stock'];
                 $image_src = $rows['image_src'];
                 $count += 1;
-                if ($count % 2 == 0) {
+                if ($count % 3 == 0) {
                   $line = true;
                 }
                 // else if ($count == 3)
@@ -96,21 +96,19 @@
                 
 
             ?>
-                <?php if ($line)
+                <?php if ($line == true)
                   echo "<li class='last'>";
                 else
                   echo "<li>";
                 ?>
                 <a href="#">
-                  <img src=<?php echo $image_src ?> alt="" width="231px" height="383px" />
+                  <img src=<?php echo $image_src ?> alt="" width="231px" height="200px" />
                 </a>
-                <div class="product-info">
-                  <h3><?php echo $id?></h3>
+                <div class="product-info">                
                   <div class="product-desc">
-                    <h4>WOMEN’S</h4>
-                    <p>Lorem ipsum dolor sit<br />
-                      amet</p>
-                    <strong class="price">$58.99</strong>
+                    <!-- <h4>WOMEN’S</h4> -->
+                    <p><?php echo $name?></p>
+                    <strong class="price">$<?php echo $price?></strong>
                   </div>
                 </div>
                 </li>
