@@ -38,23 +38,7 @@
   <!-- End Header -->
   <!-- Main -->
   <div id="main">
-    <div class="cl">&nbsp;</div>
-    <!-- Content -->
-    <div id="content">
-      <!-- Content Slider -->
-      <div id="slider" class="box">
-        <div id="slider-holder">
-          <ul>
-            <li><a href="#"><img src="css/images/Brand_remove_makeup.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/MockUp.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/BBCream.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/Lipstick.jpg" alt="" /></a></li>
-          </ul>
-        </div>
-        <div id="slider-nav"> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> </div>
-      </div>
-      <!-- End Content Slider -->
-    </div>
+    
   </div>
 </div>
   <div class="shell">
@@ -93,7 +77,7 @@
                 else {
                   $line = false;
                 }
-
+                
 
             ?>
                 <?php if ($line == true)
@@ -101,7 +85,7 @@
                 else
                   echo "<li>";
                 ?>
-                <a href="productDetail.php">
+                <a href="#">
                   <img src=<?php echo $image_src ?> alt="" width="231px" height="200px" />
                 </a>
                 <div class="product-info">                

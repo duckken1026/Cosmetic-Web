@@ -4,7 +4,7 @@ session_start();
 define('SITEURL', 'http://localhost/Cosmetic-Web/');
 define("LOCALHOST", "localhost");
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '123');
+define('DB_PASSWORD', '');
 define('DB_NAME', 'beauty_cos');
 
 $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD) or die(mysqli_error($link,));
