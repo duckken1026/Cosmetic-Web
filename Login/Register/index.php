@@ -36,6 +36,9 @@
             </div>
         </div>
     </div>
+    <?php
+            include('../../config/connect.php');
+    ?>
 </body>
 
 <script>
@@ -54,7 +57,7 @@ var vue = new Vue({
             console.log('register', this.registerForm)
             if(this.registerForm.Password == this.registerForm.repeat){
                 alert("success")
-                window.location = "../Login.html"
+                //window.location = "../Login.html"
             }
         }
     },

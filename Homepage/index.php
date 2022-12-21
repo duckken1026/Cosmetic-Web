@@ -15,7 +15,7 @@
 <body style>
 <!-- Shell -->
 <nav class="navbar">
-  <a href="../Homepage/index.html"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
+  <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
   <div class=" nav-list">
     <div class = "Headee" id = "Homepage" ><a href="index.php"><b>首頁</b></a></div>
     <div class = "Headee" id = "Popular" ><a href="./popular.html"><b>流行</b></a></div>
@@ -72,8 +72,10 @@
             // include('../partial/head.php');
             // include('../partial/navbar.php');
             include('../config/connect.php');
+            
             $sql = "SELECT * FROM product";
             $count = 0;
+            $_SESSION['count'] = 0;
             $line = false;
             $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
             if ($res == True) {
@@ -83,8 +85,8 @@
                 $name = $rows['Name'];
                 $price = $rows['Price'];
                 $stock = $rows['Stock'];
-                $image_src = $rows['image_src'];
-                $count += 1;
+                $_SESSION['image_src'] = $rows['image_src'];
+                $_SESSION['count'] += 1;
                 if ($count % 3 == 0) {
                   $line = true;
                 }
@@ -102,7 +104,7 @@
                   echo "<li>";
                 ?>
                 <a href="productDetail.php">
-                  <img src=<?php echo $image_src ?> alt="" width="231px" height="200px" />
+                  <img src=<?php echo $_SESSION['image_src'] ?> alt="" width="231px" height="200px" />
                 </a>
                 <div class="product-info">                
                   <div class="product-desc">
