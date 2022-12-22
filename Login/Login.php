@@ -16,11 +16,10 @@
   <nav class="navbar">
     <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
     <div class=" nav-list">
-      <a href="../Homepage/index.php"><b>首頁</b></a>
-      <a href="#"><b>流行</b></a>
-      <a href="#"><b>推薦</b></a>
-      <a href="#"><b>儲值</b></a>
-      <a href="../Login/Login.html"><b>登入</b></a>
+      <div class = "Headee" id = "Homepage" ><a href="../Homepage/index.php"><b>首頁</b></a></div>
+      <div class = "Headee" id = "Popular" ><a href="#"><b>流行</b></a></div>
+      <div class = "Headee" id = "Recommendation"><a href="#"><b>推薦</b></a></div>
+    </div>
     </div>
   </nav>
 
@@ -44,7 +43,7 @@
             <a href="javascript:;" id="member_btn">忘記密碼</a>
           </div>
           <div id="sign">
-            <a href="./Register/index.html" id="register">註冊</a>
+            <a href="./Register/index.php" id="register">註冊</a>
           </div>
           <p class="member_btn">您可以使用以下帳號密碼直接登入為 會員</p>
           <div class="img_btn">
