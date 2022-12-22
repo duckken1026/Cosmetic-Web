@@ -13,23 +13,23 @@
 </head>
 
 <body style>
-  <!-- Shell -->
-  <nav class="navbar">
-    <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
-    <div class=" nav-list">
-      <div class="Headee" id="Homepage"><a href="index.php"><b>首頁</b></a></div>
-      <div class="Headee" id="Popular"><a href="./popular.html"><b>流行</b></a></div>
-      <div class="Headee" id="Recommendation"><a href="./anime.html"><b>推薦</b></a></div>
-      <div class="Headee" id="AllIn"> <a href="./about.html"><b>儲值</b></a></div>
-      <div class="Headee" id="Login"><a href="../Login/Login.html"><b>登入</b></a></div>
-      <a href="#" class="cart-link">Your Shopping Cart</a>
-    </div>
-  </nav>
-  <div class="shell">
-    <!-- Header -->
-    <br> <br> <br> <br>
-    <div>
-      <!-- Cart -->
+<!-- Shell -->
+<nav class="navbar">
+  <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
+  <div class=" nav-list">
+    <div class = "Headee" id = "Homepage" ><a href="index.php"><b>首頁</b></a></div>
+    <div class = "Headee" id = "Popular" ><a href="./popular.html"><b>流行</b></a></div>
+    <div class = "Headee" id = "Recommendation"><a href="./anime.html"><b>推薦</b></a></div>
+    <div class = "Headee" id = "AllIn">  <a href="./about.html"><b>儲值</b></a></div>
+    <div class = "Headee" id = "Login"><a href="../Login/Login.html"><b>登入</b></a></div>
+    <a href="#" class="cart-link">Your Shopping Cart</a>
+  </div>
+</nav>
+<div class="shell">
+  <!-- Header -->
+  <br>  <br>  <br>  <br>
+  <div>
+    <!-- Cart -->
       <div class="cl">&nbsp;</div>
       <!-- End Cart -->
       <!-- Navigation -->
@@ -72,7 +72,6 @@
             // include('../partial/head.php');
             // include('../partial/navbar.php');
             include('../config/connect.php');
-
             $sql = "SELECT * FROM product";
             $count = 0;
             $_SESSION['count'] = 0;
