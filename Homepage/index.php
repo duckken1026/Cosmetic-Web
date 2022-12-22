@@ -2,61 +2,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>Shop Around</title>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
-<script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
-<script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
-<script src="js/jquery-func.js" type="text/javascript"></script>
-<script src="js/functionLibrary.js" type="text/javascript"></script>
+  <title>Shop Around</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+  <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+  <script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+  <script src="js/jquery-func.js" type="text/javascript"></script>
+  <script src="js/functionLibrary.js" type="text/javascript"></script>
 </head>
 
 <body style>
-<!-- Shell -->
-<nav class="navbar">
-  <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
-  <div class=" nav-list">
-    <div class = "Headee" id = "Homepage" ><a href="index.php"><b>首頁</b></a></div>
-    <div class = "Headee" id = "Popular" ><a href="./popular.html"><b>流行</b></a></div>
-    <div class = "Headee" id = "Recommendation"><a href="./anime.html"><b>推薦</b></a></div>
-    <div class = "Headee" id = "AllIn">  <a href="./about.html"><b>儲值</b></a></div>
-    <div class = "Headee" id = "Login"><a href="../Login/Login.html"><b>登入</b></a></div>
-    <a href="#" class="cart-link">Your Shopping Cart</a>
-  </div>
-</nav>
-<div class="shell">
-  <!-- Header -->
-  <br>  <br>  <br>  <br>
-  <div>
-    <!-- Cart -->
+  <!-- Shell -->
+  <nav class="navbar">
+    <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
+    <div class=" nav-list">
+      <div class="Headee" id="Homepage"><a href="index.php"><b>首頁</b></a></div>
+      <div class="Headee" id="Popular"><a href="./popular.html"><b>流行</b></a></div>
+      <div class="Headee" id="Recommendation"><a href="./anime.html"><b>推薦</b></a></div>
+      <div class="Headee" id="AllIn"> <a href="./about.html"><b>儲值</b></a></div>
+      <div class="Headee" id="Login"><a href="../Login/Login.html"><b>登入</b></a></div>
+      <a href="#" class="cart-link">Your Shopping Cart</a>
+    </div>
+  </nav>
+  <div class="shell">
+    <!-- Header -->
+    <br> <br> <br> <br>
+    <div>
+      <!-- Cart -->
       <div class="cl">&nbsp;</div>
-    <!-- End Cart -->
-    <!-- Navigation -->
-    <!-- End Navigation -->
-  </div>
-  <!-- End Header -->
-  <!-- Main -->
-  <div id="main">
-    <div class="cl">&nbsp;</div>
-    <!-- Content -->
-    <div id="content">
-      <!-- Content Slider -->
-      <div id="slider" class="box">
-        <div id="slider-holder">
-          <ul>
-            <li><a href="#"><img src="css/images/Brand_remove_makeup.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/MockUp.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/BBCream.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/Lipstick.jpg" alt="" /></a></li>
-          </ul>
+      <!-- End Cart -->
+      <!-- Navigation -->
+      <!-- End Navigation -->
+    </div>
+    <!-- End Header -->
+    <!-- Main -->
+    <div id="main">
+      <div class="cl">&nbsp;</div>
+      <!-- Content -->
+      <div id="content">
+        <!-- Content Slider -->
+        <div id="slider" class="box">
+          <div id="slider-holder">
+            <ul>
+              <li><a href="#"><img src="css/images/Brand_remove_makeup.jpg" alt="" /></a></li>
+              <li><a href="#"><img src="css/images/MockUp.jpg" alt="" /></a></li>
+              <li><a href="#"><img src="css/images/BBCream.jpg" alt="" /></a></li>
+              <li><a href="#"><img src="css/images/Lipstick.jpg" alt="" /></a></li>
+            </ul>
+          </div>
+          <div id="slider-nav"> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> </div>
         </div>
-        <div id="slider-nav"> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> </div>
+        <!-- End Content Slider -->
       </div>
-      <!-- End Content Slider -->
     </div>
   </div>
-</div>
   <div class="shell">
 
     <!-- Main -->
@@ -72,7 +72,7 @@
             // include('../partial/head.php');
             // include('../partial/navbar.php');
             include('../config/connect.php');
-            
+
             $sql = "SELECT * FROM product";
             $count = 0;
             $_SESSION['count'] = 0;
@@ -106,11 +106,11 @@
                 <a href="productDetail.php">
                   <img src=<?php echo $_SESSION['image_src'] ?> alt="" width="231px" height="200px" />
                 </a>
-                <div class="product-info">                
+                <div class="product-info">
                   <div class="product-desc">
                     <!-- <h4>WOMEN’S</h4> -->
-                    <p><?php echo $name?></p>
-                    <strong class="price">$<?php echo $price?></strong>
+                    <p><?php echo $name ?></p>
+                    <strong class="price">$<?php echo $price ?></strong>
                   </div>
                 </div>
                 </li>
@@ -211,27 +211,33 @@
       <div class="more-products">
         <div class="more-products-holder">
           <ul>
-            <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-            <li class="last"><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
+            <?php
+            $sql = "SELECT * FROM product";
+            $count = 0;
+            $last = false;
+            $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
+            while ($rows = mysqli_fetch_assoc($res)) {
+              $id = $rows['ID'];
+              $name = $rows['Name'];
+              $price = $rows['Price'];
+              $stock = $rows['Stock'];
+              $image_src = $rows['image_src'];
+              $count += 1;
+
+              if ($count >= 7) {
+                $out = true;
+              } else if ($count == 17) {
+                $last = true;
+              } else {
+                $out = false;
+                continue;
+              }
+            ?>
+              <li><a href="#"><img src=<?php if ($out) echo $image_src ?> alt="" width="100px" height="100px" /></a></li>
+            <?php
+              if ($last) echo "<li class='last'><a href='#'><img src='css/images/small7.jpg' alt='' /></a></li>";
+            }
+            ?>
           </ul>
         </div>
         <div class="more-nav"> <a href="#" class="prev">previous</a> <a href="#" class="next">next</a> </div>
