@@ -7,18 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Register.css">
     <script src="https://cdn.staticfile.org/vue/2.6.9/vue.js"></script>
+    <script src="Register.js"></script>
 </head>
 
 <body>
     <nav class="navbar">
         <a href="../../Homepage/index.html"><img class="nav-brand" src="../../img/icon(title).png" alt=""></a>
         <div class=" nav-list">
-        <a href="../../Homepage/index.html"><b>首頁</b></a>
-        <a href="./popular.html"><b>流行</b></a>
-        <a href="./anime.html"><b>推薦</b></a>
-        <a href="./about.html"><b>儲值</b></a>
-        <a href="../../Login/Login.html"><b>登入</b></a>
+          <div class = "Headee" id = "Homepage" ><a href="../../Homepage/index.php"><b>首頁</b></a></div>
+          <div class = "Headee" id = "Popular" ><a href="#"><b>流行</b></a></div>
+          <div class = "Headee" id = "Recommendation"><a href="#"><b>推薦</b></a></div>
+          <div class = "Headee" id = "Login"><a href="../Login.php"><b>登入</b></a></div>
         </div>
       </nav>
     <div id='app' class="container">
@@ -33,6 +34,23 @@
                         <div class="input"><input :class='{ hasValue: registerForm.Password }' v-model='registerForm.Password' type="password" name="Password" id="Password" /><label for="Password">密碼</label></div>
                         <div class="input"><input :class='{ hasValue: registerForm.repeat }' v-model='registerForm.repeat' type="password" name="repeat" id="Passwordrepeat" /><label for="Passwordrepeat">重複密碼</label></div>
                     <button type="submit" @click='submit'>註冊</button>
+
+                  <!-- <span style="font-size: 30px;">註冊帳號</span>
+                  <div class="input"><input :class='{ hasValue: registerForm.email }' v-model='registerForm.email' type="text" name="email" id='email' /><label for="email">電子信箱</label></div>
+                  <div class="input"><input :class='{ hasValue: registerForm.Username }' v-model='registerForm.Username' type="text" name="Username" id="username" /><label for="username">用戶名</label></div>
+                  <div class = "input-container">
+                    <div class = "input-group">
+                      <div class="input"><input :class='{ hasValue: registerForm.Password }' v-model='registerForm.Password' type="password" name="Password" id="Password" /><label for="Password">密碼</label></div>
+                        <span class="toggle"></span>
+                        <span class = ripple></span>
+                    </div>
+                    <div class = "pass-strength">
+                      <div class = "strength-percent"></span></div>
+                        <span class = "strength-lable">Strength</span>
+                    </div>
+                    </div>
+                  <div class="input"><input :class='{ hasValue: registerForm.repeat }' v-model='registerForm.repeat' type="password" name="repeat" id="Passwordrepeat" /><label for="Passwordrepeat">重複密碼</label></div>
+                  <button type="submit" @click='submit'>註冊</button> -->
                 </div>
             </div>
         </div>
@@ -65,5 +83,4 @@ var vue = new Vue({
     beforeMount () {}
 })
 </script>
-
 </html>
