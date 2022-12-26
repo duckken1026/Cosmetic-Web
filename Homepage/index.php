@@ -21,7 +21,7 @@
     <div class = "Headee" id = "Homepage" ><a href="index.php"><b>首頁</b></a></div>
     <div class = "Headee" id = "Popular" ><a href="./popular.html"><b>流行</b></a></div>
     <div class = "Headee" id = "Recommendation"><a href="./anime.html"><b>推薦</b></a></div>
-    <div class = "Headee" id = "Login"><a href="../Login/Login.html"><b>登入</b></a></div>
+    <div class = "Headee" id = "Login"><a href="../Login/Login.php"><b>登入</b></a></div>
     <a href="#" class="cart-link">Your Shopping Cart</a>
   </div>
 </nav>

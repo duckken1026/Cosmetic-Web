@@ -14,7 +14,7 @@
 
 <body>
     <nav class="navbar">
-        <a href="../../Homepage/index.html"><img class="nav-brand" src="../../img/icon(title).png" alt=""></a>
+        <a href="../../Homepage/index.php"><img class="nav-brand" src="../../img/icon(title).png" alt=""></a>
         <div class=" nav-list">
           <div class = "Headee" id = "Homepage" ><a href="../../Homepage/index.php"><b>首頁</b></a></div>
           <div class = "Headee" id = "Popular" ><a href="#"><b>流行</b></a></div>
@@ -76,7 +76,7 @@ var vue = new Vue({
             console.log('register', this.registerForm)
             if(this.registerForm.Password == this.registerForm.repeat){
                 alert("success")
-                window.location = "../Login.html"
+                window.location = "../Login.php"
             }
         }
     },
