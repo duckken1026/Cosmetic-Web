@@ -41,11 +41,12 @@
     <input type ="button" onclick="javascript:location.href='index.php'" value="回上頁" ></input>
     <?php 
         session_start();
-        $count = $_SESSION['count'];
-        echo $count;
+        $count = $_SESSION['count']; 
+        echo $count. "<br>";
+        //print_r($_SESSION['img']); 
     ?>
-     <img src=<?php echo $_SESSION['image_src'] ?> alt="" width="231px" height="200px" />
-  </div>
+     <img src=<?php echo $_SESSION['img'][1] ?> alt="" width="231px" height="200px" />
+  </div> 
   
 </div>
   

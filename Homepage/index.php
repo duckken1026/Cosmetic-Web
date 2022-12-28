@@ -77,6 +77,7 @@
             $_SESSION['count'] = 0;
             $line = false;
             $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
+            $_SESSION['img'] = array();//存照片的陣列 
             if ($res == True) {
 
               while ($rows = mysqli_fetch_assoc($res)) {
@@ -86,6 +87,7 @@
                 $stock = $rows['Stock'];
                 $_SESSION['image_src'] = $rows['image_src'];
                 $_SESSION['count'] += 1;
+                array_push($_SESSION['img'], $_SESSION['image_src']);//存入照片
                 if ($count % 3 == 0) {
                   $line = true;
                 }
@@ -103,7 +105,7 @@
                   echo "<li>";
                 ?>
                 <a href="productDetail.php">
-                  <img src=<?php echo $_SESSION['image_src'] ?> alt="" width="231px" height="200px" />
+                  <img id = "commodity"  onclick = "clickImage()" src=<?php echo $_SESSION['image_src'] ?> alt="" width="231px" height="200px" />
                 </a>
                 <div class="product-info">
                   <div class="product-desc">
