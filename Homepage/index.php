@@ -2,34 +2,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>Shop Around</title>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-<link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" />
-<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
-<script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
-<script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
-<script src="js/jquery-func.js" type="text/javascript"></script>
-<script src="js/functionLibrary.js" type="text/javascript"></script>
+  <title>Shop Around</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" />
+  <!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+  <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+  <script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+  <script src="js/jquery-func.js" type="text/javascript"></script>
+  <script src="js/functionLibrary.js" type="text/javascript"></script>
 </head>
 
 <body style>
-<!-- Shell -->
-<nav class="navbar">
-  <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
-  <div class=" nav-list">
-    <div class = "Headee" id = "Homepage" ><a href="index.php"><b>首頁</b></a></div>
-    <div class = "Headee" id = "Popular" ><a href="./popular.html"><b>流行</b></a></div>
-    <div class = "Headee" id = "Recommendation"><a href="./anime.html"><b>推薦</b></a></div>
-    <div class = "Headee" id = "Login"><a href="../Login/Login.php"><b>登入</b></a></div>
-    <a href="#" class="cart-link">Your Shopping Cart</a>
-  </div>
-</nav>
-<div class="shell">
-  <!-- Header -->
-  <br>  <br>  <br>  <br>
-  <div>
-    <!-- Cart -->
+  <!-- Shell -->
+  <nav class="navbar">
+    <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
+    <div class=" nav-list">
+      <div class="Headee" id="Homepage"><a href="index.php"><b>首頁</b></a></div>
+      <div class="Headee" id="Popular"><a href="./popular.html"><b>流行</b></a></div>
+      <div class="Headee" id="Recommendation"><a href="./anime.html"><b>推薦</b></a></div>
+      <div class="Headee" id="Login"><a href="../Login/Login.php"><b>登入</b></a></div>
+      <a href="#" class="cart-link">Your Shopping Cart</a>
+    </div>
+  </nav>
+  <div class="shell">
+    <!-- Header -->
+    <br> <br> <br> <br>
+    <div>
+      <!-- Cart -->
       <div class="cl">&nbsp;</div>
       <!-- End Cart -->
       <!-- Navigation -->
@@ -154,9 +154,9 @@
         <div class="box search">
           <h2>Search by <span></span></h2>
           <div class="box-content">
-            <form action="#" method="post">
+            <form action="./search.php" method="post">
               <label>Keyword</label>
-              <input type="text" class="field" />
+              <input type="text" class="field" name="keywords" />
               <label>Category</label>
               <select class="field">
                 <option value="">-- Select Category --</option>
