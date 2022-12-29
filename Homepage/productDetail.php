@@ -40,12 +40,55 @@
   <div id="main">
     <input type ="button" onclick="javascript:location.href='index.php'" value="回上頁" ></input>
     <?php 
+        $id = $_GET['id'];
         session_start();
         $count = $_SESSION['count']; 
-        echo $count. "<br>";
-        //print_r($_SESSION['img']); 
+        echo "<br>";
     ?>
-     <img src=<?php echo $_SESSION['img'][1] ?> alt="" width="231px" height="200px" />
+    <?php
+            // include('../partial/head.php');
+            // include('../partial/navbar.php');
+            include('../config/connect.php');
+            $sql = "SELECT * FROM product Where ID = $id";
+            $count = 0;
+            $_SESSION['count'] = 0;
+            $line = false;
+            $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
+            $_SESSION['img'] = array();//存照片的陣列 
+            if ($res == True) {
+
+              while ($rows = mysqli_fetch_assoc($res)) {
+                $id = $rows['ID'];
+                $name = $rows['Name'];
+                $price = $rows['Price'];
+                $stock = $rows['Stock'];
+                $detail = $rows['detail'];
+                $_SESSION['image_src'] = $rows['image_src'];
+                $_SESSION['count'] += 1;
+                array_push($_SESSION['img'], $_SESSION['image_src']);//存入照片
+                if ($count % 3 == 0) {
+                  $line = true;
+                }
+                // else if ($count == 3)
+                //     continue;
+                else {
+                  $line = false;
+                }
+                ?>
+                
+                <img style="margin-bottom:30px; "src=<?php echo $_SESSION['image_src'] ?> alt="" width="500px" height="500px" />
+                <p style="font-size:40px; "><?php echo $name ?></p></br></br>
+                <p style="font-size:30px; ">價格:<?php echo $price ?></p></br></br>
+                <p style="font-size:30px; ">商品敘述:<p></br>
+                <p style="font-size:30px; line-height:35px"><?php echo $detail ?><p></br></br></br>
+              <?php
+              }
+              
+            }
+
+            ?>
+
+     
   </div> 
   
 </div>
