@@ -76,9 +76,9 @@
                         $keywords = $_POST['keywords'];
                         $sql = "select * from product where Name like '%" . $keywords . "%'";
                         $result = mysqli_query($conn, $sql);
-                        if (!$result) {
-                            die('無法讀取' . mysqli_error($conn));
-                        }
+                        // if (!$result = mysqli_query($conn, $sql)) {
+                        //     die('無法讀取' . mysqli_error($conn));
+                        // }
                         if (mysqli_num_rows($result) == 0)
                             echo "<h1>無此商品</h1>";
                         while ($row = mysqli_fetch_array($result)) {
