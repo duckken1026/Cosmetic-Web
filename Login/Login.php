@@ -21,7 +21,7 @@
     </div>
   </nav>
 
-  <form class="login" action="javascript:;" method="post">
+  <form class="login" action="Login2.php" method="post">
     <div id="left" class="one-thirds">
       <div class="companyIcon">
         <img src="../img/icon(title).png" alt="icon" width="550px" height="420px">
@@ -35,23 +35,7 @@
         <p>直接輸入您的會員帳號密碼登入</p>
         <!--1--> <input type="username" id="username" class="username_email" name="username" placeholder="電子郵件地址或手機號碼" required>
         <!--2--> <input type="password" id="password" class="password1" name="password" placeholder="密碼" required>
-        <!--3--> <input type="button" value="登入" class="btn" id="submit" onclick="" />
-        <?php
-        include("../config/connect.php");
-        $sql = "SELECT * FROM member";
-        $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
-        $state = 0;
-        while ($rows = mysqli_fetch_assoc($res)) {
-          $name = $rows['E-mail'];
-          $password = $rows['Password'];
-          if ($name == $_POST['username'] and $password == $_POST['password']) {
-            $state = 1;
-            break;
-          } else $state = 0;
-        }
-        if ($state == 1) echo "successfully login";
-        else echo "failure";
-        ?>
+        <!--3--> <input type="submit" value="登入" class="btn" id="submit" />
         <div id="anotherWay">
           <div class="forgetPassword">
             <a href="javascript:;" id="member_btn">忘記密碼</a>
@@ -68,4 +52,3 @@
 <style media="screen">
   @import url(Login.css);
 </style>
-<script type="text/javascript" source src="Login.js"></script>
