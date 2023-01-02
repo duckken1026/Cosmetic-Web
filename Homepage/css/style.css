@@ -650,19 +650,19 @@ h3.ico {
 }
 
 h3.ico1 {
-    background-image: url(images/person.png);
+    background-image: url(./images/person.png);
 }
 
 h3.ico2 {
-    background-image: url(images/person.png);
+    background-image: url(./images/person.png);
 }
 
 h3.ico3 {
-    background-image: url(images/person.png);
+    background-image: url(./images/person.png);
 }
 
 h3.ico4 {
-    background-image: url(images/person.png);
+    background-image: url(./images/person.png);
 }
 
 #footer {
@@ -732,5 +732,5 @@ h3.ico4 {
 }
 
 .Headee {
-    display: inline-block;
+	display: inline-block;
 }

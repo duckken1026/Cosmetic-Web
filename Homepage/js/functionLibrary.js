@@ -15,12 +15,9 @@ function myFormCheck(){// 以下功能單擊登錄按鈕執行。
 var t = document.getElementById('Login');//选取id为Login的div元素
 t.style.visibility = 'hidden';// 隐藏元素
 //t.style.visibility = 'visible';// 显示元素
-
-//判斷點選的是哪個商品的圖片
-function clickImage(){
-
-    var img = document.getElementById("commodity");
-
-    alert(img.getAttribute("src"));
-};
-
+document.querySelector('.last').addEventListener('click',
+  function () {
+    const value = document.querySelector('.li .id').value
+      alert(value)
+  }
+)
