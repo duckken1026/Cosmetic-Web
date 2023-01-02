@@ -4,24 +4,24 @@
 <head>
     <title>Shop Around</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="../css/ie6.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" />
     <!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
-    <script src="../js/jquery-1.4.1.min.js" type="text/javascript"></script>
-    <script src="../js/jquery.jcarousel.pack.js" type="text/javascript"></script>
-    <script src="../js/jquery-func.js" type="text/javascript"></script>
-    <script src="../js/functionLibrary.js" type="text/javascript"></script>
+    <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+    <script src="js/jquery-func.js" type="text/javascript"></script>
+    <script src="js/functionLibrary.js" type="text/javascript"></script>
 </head>
 
 <body style>
     <!-- Shell -->
     <nav class="navbar">
-        <a href="../Homepage/index.php"><img class="nav-brand" src="../../img/icon(title).png" alt=""></a>
+        <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
         <div class=" nav-list">
-            <div class="Headee" id="Homepage"><a href="../index.php"><b>首頁</b></a></div>
-            <div class="Headee" id="Popular"><a href="../popular.php"><b>流行</b></a></div>
-            <div class="Headee" id="Recommendation"><a href="../recom.php"><b>推薦</b></a></div>
-            <div class="Headee" id="Login"><a href="../../Login/Login.php"><b>登入</b></a></div>
+            <div class="Headee" id="Homepage"><a href="./index.php"><b>首頁</b></a></div>
+            <div class="Headee" id="Popular"><a href="./popular.php"><b>流行</b></a></div>
+            <div class="Headee" id="Recommendation"><a href="./recom.php"><b>推薦</b></a></div>
+            <div class="Headee" id="Login"><a href="../Login/Login.php"><b>登入</b></a></div>
             <a href="#" class="cart-link">Your Shopping Cart</a>
         </div>
     </nav>
@@ -45,10 +45,10 @@
                 <div id="slider" class="box">
                     <div id="slider-holder">
                         <ul>
-                            <li><a href="#"><img src="../css/images/Brand_remove_makeup.jpg" alt="" /></a></li>
-                            <li><a href="#"><img src="../css/images/MockUp.jpg" alt="" /></a></li>
-                            <li><a href="#"><img src="../css/images/BBCream.jpg" alt="" /></a></li>
-                            <li><a href="#"><img src="../css/images/Lipstick.jpg" alt="" /></a></li>
+                            <li><a href="#"><img src="css/images/Brand_remove_makeup.jpg" alt="" /></a></li>
+                            <li><a href="#"><img src="css/images/MockUp.jpg" alt="" /></a></li>
+                            <li><a href="#"><img src="css/images/BBCream.jpg" alt="" /></a></li>
+                            <li><a href="#"><img src="css/images/Lipstick.jpg" alt="" /></a></li>
                         </ul>
                     </div>
                     <div id="slider-nav"> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> </div>
@@ -69,47 +69,56 @@
                     <div class="cl">&nbsp;</div>
                     <ul>
                         <?php
-                        $line = false;
+                        // include('../partial/head.php');
+                        // include('../partial/navbar.php');
+                        include('../config/connect.php');
+                        $sql = "SELECT * FROM product";
                         $count = 0;
                         $_SESSION['count'] = 0;
-                        require("../../config/connect.php");
-                        $keywords = '修容';
-                        $sql = "select * from product where Name like '%" . $keywords . "%'";
-                        $result = mysqli_query($conn, $sql);
-                        // if (!$result = mysqli_query($conn, $sql)) {
-                        //     die('無法讀取' . mysqli_error($conn));
-                        // }
-                        if (mysqli_num_rows($result) == 0)
-                            echo "<h1>無此商品</h1>";
-                        while ($row = mysqli_fetch_array($result)) {
-                            $id = $row['ID'];
-                            $image = $row['image_src'];
-                            $name = $row['Name'];
-                            $price = $row['Price'];
-                            $stock = $row['Stock'];
-                            $_SESSION['count'] += 1;
-                            if ($count % 3 == 0) {
-                                $line = true;
-                            } else {
-                                $line = false;
-                            }
-                            if ($line == true)
-                                echo "<li class='last'>";
-                            else
-                                echo "<li>";
+                        $line = false;
+                        $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
+                        $_SESSION['img'] = array(); //存照片的陣列 
+                        if ($res == True) {
+
+                            while ($rows = mysqli_fetch_assoc($res)) {
+                                $id = $rows['ID'];
+                                $name = $rows['Name'];
+                                $price = $rows['Price'];
+                                $stock = $rows['Stock'];
+                                $_SESSION['image_src'] = $rows['image_src'];
+                                $_SESSION['count'] += 1;
+                                array_push($_SESSION['img'], $_SESSION['image_src']); //存入照片
+                                if ($count % 3 == 0) {
+                                    $line = true;
+                                } else {
+                                    $line = false;
+                                }
+                                $count += 1;
+                                if ($count <= 17)
+                                    continue;
+
                         ?>
-                            <a href="../productDetail.php?id=<?php echo $id ?>">
-                                <img src=<?php echo $image ?> alt="" width="231px" height="200px" />
-                            </a>
-                            <div class="product-info">
-                                <div class="product-desc">
-                                    <!-- <h4>WOMEN’S</h4> -->
-                                    <p><?php echo $name ?></p>
-                                    <strong class="price">$<?php echo $price ?></strong>
+                                <?php if ($line == true)
+                                    echo "<li class='last'>";
+                                else
+                                    echo "<li>";
+                                ?>
+                                <a href="productDetail.php?id=<?php echo $id ?>">
+                                    <img id="commodity" onclick="clickImage()" src=<?php echo $_SESSION['image_src'] ?> alt="" width="231px" height="200px" />
+                                </a>
+                                <div class="product-info">
+                                    <div class="product-desc">
+                                        <!-- <h4>WOMEN’S</h4> -->
+                                        <p><?php echo $name ?></p>
+                                        <strong class="price">$<?php echo $price ?></strong>
+                                    </div>
                                 </div>
-                            </div>
-                            </li>
+                                </li>
+                                <!-- <?php if ($line == True) echo "<br>"; ?> -->
+
                         <?php
+
+                            }
                         }
                         ?>
                     </ul>
@@ -124,7 +133,7 @@
                 <div class="box search">
                     <h2>Search by <span></span></h2>
                     <div class="box-content">
-                        <form action="../search.php" method="post">
+                        <form action="./search.php" method="post">
                             <label>Keyword</label>
                             <input type="text" class="field" name="keywords" />
                             <label>Category</label>
@@ -154,13 +163,13 @@
                     <h2>Categories <span></span></h2>
                     <div class="box-content">
                         <ul>
-                            <li><a href="./Category1.php">眉彩</a></li>
-                            <li><a href="./Category2.php">眼線</a></li>
-                            <li><a href="./Category3.php">眼影</a></li>
-                            <li><a href="./Category4.php">睫毛</a></li>
-                            <li><a href="./Category5.php">腮紅</a></li>
-                            <li><a href="./Category6.php">修容</a></li>
-                            <li class="last"><a href="./Category7.php">唇彩</a></li>
+                            <li><a href="./Category/Category1.php">眉彩</a></li>
+                            <li><a href="./Category/Category2.php">眼彩</a></li>
+                            <li><a href="./Category/Category3.php">粉餅</a></li>
+                            <li><a href="./Category/Category4.php">睫毛</a></li>
+                            <li><a href="./Category/Category5.php">腮紅</a></li>
+                            <li><a href="./Category/Category6.php">修容</a></li>
+                            <li class="last"><a href="./Category/Category7.php">唇彩</a></li>
                         </ul>
                     </div>
                 </div>

@@ -35,7 +35,7 @@
         <p>直接輸入您的會員帳號密碼登入</p>
         <!--1--> <input type="username" id="username" class="username_email" name="username" placeholder="電子郵件地址或手機號碼" required>
         <!--2--> <input type="password" id="password" class="password1" name="password" placeholder="密碼" required>
-        <!--3--> <input type="button" value="登入" class="btn" id="submit" onclick="myFormCheck()" />
+        <!--3--> <input type="button" value="登入" class="btn" id="submit" onclick="" />
         <?php
         include("../config/connect.php");
         $sql = "SELECT * FROM member";

@@ -19,8 +19,8 @@
     <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
     <div class=" nav-list">
       <div class="Headee" id="Homepage"><a href="index.php"><b>首頁</b></a></div>
-      <div class="Headee" id="Popular"><a href="./popular.html"><b>流行</b></a></div>
-      <div class="Headee" id="Recommendation"><a href="./anime.html"><b>推薦</b></a></div>
+      <div class="Headee" id="Popular"><a href="./popular.php"><b>流行</b></a></div>
+      <div class="Headee" id="Recommendation"><a href="./recom.php"><b>推薦</b></a></div>
       <div class="Headee" id="Login"><a href="../Login/Login.php"><b>登入</b></a></div>
       <a href="#" class="cart-link">Your Shopping Cart</a>
     </div>
@@ -78,7 +78,7 @@
             #$_SESSION['id'] = 0;
             $line = false;
             $res = mysqli_query($conn, $sql) or die(mysqli_error($link));
-            $_SESSION['img'] = array();//存照片的陣列
+            $_SESSION['img'] = array(); //存照片的陣列
             if ($res == True) {
 
               while ($rows = mysqli_fetch_assoc($res)) {
@@ -88,12 +88,11 @@
                 $stock = $rows['Stock'];
                 $_SESSION['image_src'] = $rows['image_src'];
                 $_SESSION['count'] += 1;
-                array_push($_SESSION['img'], $_SESSION['image_src']);//存入照片
+                array_push($_SESSION['img'], $_SESSION['image_src']); //存入照片
                 if ($count % 3 == 0) {
                   $line = true;
-                }
-                // else if ($count == 3)
-                //     continue;
+                } else if ($count == 17)
+                  break;
                 else {
                   $line = false;
                 }
@@ -117,29 +116,8 @@
                 </div>
                 </li>
                 <!-- <?php if ($line == True) echo "<br>"; ?> -->
-                <!-- <li> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
-                  <div class="product-info">
-                    <h3>LOREM IPSUM</h3>
-                    <div class="product-desc">
-                      <h4>WOMEN’S</h4>
-                      <p>Lorem ipsum dolor sit<br />
-                        amet</p>
-                      <strong class="price">$58.99</strong>
-                    </div>
-                  </div>
-                </li>
-                <li class="last"> <a href="#"><img src="css/images/big1.jpg" alt="" /></a>
-                  <div class="product-info">
-                    <h3>LOREM IPSUM</h3>
-                    <div class="product-desc">
-                      <h4>WOMEN’S</h4>
-                      <p>Lorem ipsum dolor sit<br />
-                        amet</p>
-                      <strong class="price">$58.99</strong>
-                    </div>
-                  </div>
-                </li> -->
             <?php
+                $count += 1;
               }
             }
             ?>
@@ -185,19 +163,13 @@
           <h2>Categories <span></span></h2>
           <div class="box-content">
             <ul>
-              <li><a href="./Category/Category1.php>">Category 1</a></li>
-              <li><a href="./Category/Category2.php">Category 2</a></li>
-              <li><a href="./Category/Category3.php">Category 3</a></li>
-              <li><a href="./Category/Category4.php">Category 4</a></li>
-              <li><a href="./Category/Category5.php">Category 5</a></li>
-              <li><a href="./Category/Category6.php">Category 6</a></li>
-              <li><a href="./Category/Category7.php">Category 7</a></li>
-              <li><a href="./Category/Category8.php">Category 8</a></li>
-              <li><a href="./Category/Category9.php">Category 9</a></li>
-              <li><a href="./Category/Category10.php">Category 10</a></li>
-              <li><a href="./Category/Category11.php">Category 11</a></li>
-              <li><a href="./Category/Category12.php">Category 12</a></li>
-              <li class="last"><a href="./Category/Category13.php">Category 13</a></li>
+              <li><a href="./Category/Category1.php">眉彩</a></li>
+              <li><a href="./Category/Category2.php">眼彩</a></li>
+              <li><a href="./Category/Category3.php">粉餅</a></li>
+              <li><a href="./Category/Category4.php">睫毛</a></li>
+              <li><a href="./Category/Category5.php">腮紅</a></li>
+              <li><a href="./Category/Category6.php">修容</a></li>
+              <li class="last"><a href="./Category/Category7.php">唇彩</a></li>
             </ul>
           </div>
         </div>
