@@ -15,9 +15,3 @@ function myFormCheck(){// 以下功能單擊登錄按鈕執行。
 var t = document.getElementById('Login');//选取id为Login的div元素
 t.style.visibility = 'hidden';// 隐藏元素
 //t.style.visibility = 'visible';// 显示元素
-document.querySelector('.last').addEventListener('click',
-  function () {
-    const value = document.querySelector('.li .id').value
-      alert(value)
-  }
-)

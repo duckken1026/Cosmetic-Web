@@ -105,8 +105,8 @@
                 else
                   echo "<li>";
                 ?>
-                <a href="productDetail.php">
-                  <img id = "commodity"  onclick = "clickImage()" src=<?php echo $_SESSION['image_src'] ?> alt="" width="231px" height="200px" />
+                <a href="productDetail.php?id=<?php echo $id ?>">
+                  <img src=<?php echo $_SESSION['image_src'] ?> alt="" width="231px" height="200px" />
                 </a>
                 <div class="product-info">
                   <div class="product-desc">

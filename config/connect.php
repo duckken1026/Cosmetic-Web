@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 define('SITEURL', 'http://localhost/Cosmetic-Web/');
 define("LOCALHOST", "localhost");

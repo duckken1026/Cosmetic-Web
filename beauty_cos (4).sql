@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2022-12-20 16:28:25
+-- 產生時間： 2022-12-29 09:39:17
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 8.1.6
 
@@ -162,10 +162,10 @@ CREATE TABLE `member` (
   `ID` varchar(10) NOT NULL,
   `FirstName` varchar(20) NOT NULL,
   `LastName` varchar(20) NOT NULL,
-  `Phone No` varchar(20) NOT NULL,
-  `NickName` varchar(20) NOT NULL,
-  `E-mail` varchar(50) DEFAULT NULL,
-  `Password` int(20) DEFAULT NULL
+  `Phone No` varchar(20) DEFAULT NULL,
+  `NickName` varchar(20) DEFAULT NULL,
+  `E-mail` varchar(50) NOT NULL,
+  `Password` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -221,7 +221,7 @@ INSERT INTO `product` (`ID`, `Name`, `Price`, `Stock`, `image_src`, `detail`, `r
 ('000014', 'innisfree 無油無慮礦物控油蜜粉 No sebum mineral powder', 240, 6, 'https://flipa-production.s3-ap-southeast-1.amazonaws.com/uploads/product_image/47181/1/_250x250_47181_20220419065629dbIcHJhIED.jpg', '【 限量 】2022史努比限定版', '', '5', '002'),
 ('000015', '透頰潤唇兩用霜Lip & Cheek Gel', 320, 8, 'https://flipa-production.s3-ap-southeast-1.amazonaws.com/uploads/product_image/77616/1/_250x250_77616_20201224015902eLsEGUSspG.jpg', '滑順質地 與肌膚溫度融合的膠狀質地，抹上立即與肌膚貼合 創造如同由肌膚底層透出來的紅潤妝感!', '', '2', '001'),
 ('000016', 'LUDEYA 露蒂雅 3合1微臻全能氣墊粉餅', 1980, 6, 'https://flipa-production.s3-ap-southeast-1.amazonaws.com/uploads/product_image/93636/1/_250x250_93636_20191119015652wEojuTUHAC.jpg', '彩妝史上超進化  精品級全能氣墊，變形金剛級氣墊粉餅，智慧旋轉雙層設計', '', '5', '002'),
-('000017', '彩妝史上超進化  精品級全能氣墊，變形金剛級氣墊粉餅，智慧旋轉雙層設計', 900, 5, 'https://flipa-production.s3-ap-southeast-1.amazonaws.com/uploads/product_image/81514/1/_250x250_81514.jpg', '商品特長 ◆色彩持久不脫落。*添加服貼型油質、皮脂吸附粉體 ◆通過10小時持色測試。 ◆不受汗水影響的防水型眉采', '', '2', '001');
+('000017', 'Cosmo Angel推薦：佳麗寶 COFFRET D\'OR W雙采魅力造型眉筆組', 900, 5, 'https://flipa-production.s3-ap-southeast-1.amazonaws.com/uploads/product_image/81514/1/_250x250_81514.jpg', '商品特長 ◆色彩持久不脫落。*添加服貼型油質、皮脂吸附粉體 ◆通過10小時持色測試。 ◆不受汗水影響的防水型眉采', '', '2', '001');
 
 -- --------------------------------------------------------
 
