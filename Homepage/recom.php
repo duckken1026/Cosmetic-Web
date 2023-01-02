@@ -96,6 +96,8 @@
                                 $count += 1;
                                 if ($count <= 17)
                                     continue;
+                                if ($count == 30)
+                                    break;
 
                         ?>
                                 <?php if ($line == true)
