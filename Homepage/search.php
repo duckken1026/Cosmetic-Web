@@ -19,10 +19,10 @@
         <a href="../Homepage/index.php"><img class="nav-brand" src="../img/icon(title).png" alt=""></a>
         <div class=" nav-list">
             <div class="Headee" id="Homepage"><a href="index.php"><b>首頁</b></a></div>
-            <div class="Headee" id="Popular"><a href="./popular.html"><b>流行</b></a></div>
-            <div class="Headee" id="Recommendation"><a href="./anime.html"><b>推薦</b></a></div>
+            <div class="Headee" id="Popular"><a href="./popular.php"><b>流行</b></a></div>
+            <div class="Headee" id="Recommendation"><a href="./recom.php"><b>推薦</b></a></div>
             <div class="Headee" id="Login"><a href="../Login/Login.php"><b>登入</b></a></div>
-            <a href="#" class="cart-link">Your Shopping Cart</a>
+            <a href="./shoppingCart.php" class="cart-link">Your Shopping Cart</a>
         </div>
     </nav>
     <div class="shell">
