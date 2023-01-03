@@ -22,7 +22,7 @@
       <div class="Headee" id="Popular"><a href="./popular.php"><b>流行</b></a></div>
       <div class="Headee" id="Recommendation"><a href="./recom.php"><b>推薦</b></a></div>
       <div class="Headee" id="Login"><a href="../Login/Login.php"><b>登入</b></a></div>
-      <a href="#" class="cart-link">Your Shopping Cart</a>
+      <a href="./shoppingCart.php" class="cart-link">Your Shopping Cart</a>
     </div>
   </nav>
   <div class="shell">
